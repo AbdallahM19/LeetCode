@@ -24,6 +24,27 @@ def increment_string(string: str):
     return "".join(string[:len_str] + end_part)
 
 
+# Second Solve
+# def increment_string(string: str) -> str:
+#     # Find the position where the numeric suffix starts
+#     num_start = len(string)
+#     for i in range(len(string) - 1, -1, -1):
+#         if not string[i].isdigit():
+#             num_start = i + 1
+#             break
+
+#     # Split the string into the prefix and numeric suffix
+#     prefix = string[:num_start]
+#     num_suffix = string[num_start:]
+
+#     if not num_suffix:  # No numeric suffix found, append '1'
+#         return prefix + '1'
+
+#     # Increment the numeric suffix and format with leading zeros if needed
+#     incremented_num = str(int(num_suffix) + 1).zfill(len(num_suffix))
+#     return prefix + incremented_num
+
+
 print(increment_string("foo") == "foo1", increment_string("foo"), "foo1")
 print(increment_string("foobar001") == "foobar002", increment_string("foobar001"), "foobar002")
 print(increment_string("foobar1") == "foobar2", increment_string("foobar1"), "foobar2")
